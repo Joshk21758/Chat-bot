@@ -1,3 +1,7 @@
+
+'use client';
+
+import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -9,9 +13,12 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
 import Link from "next/link";
 
 export default function SignupPage() {
+  const [showPassword, setShowPassword] = useState(false);
+
   return (
     <div className="flex items-center justify-center h-screen bg-background">
       <Card className="w-full max-w-sm">
@@ -28,7 +35,15 @@ export default function SignupPage() {
           </div>
           <div className="grid gap-2">
             <Label htmlFor="password">Password</Label>
-            <Input id="password" type="password" required />
+            <Input id="password" type={showPassword ? "text" : "password"} required />
+          </div>
+          <div className="grid gap-2">
+            <Label htmlFor="confirm-password">Confirm Password</Label>
+            <Input id="confirm-password" type={showPassword ? "text" : "password"} required />
+          </div>
+          <div className="flex items-center space-x-2">
+            <Checkbox id="show-password" onCheckedChange={() => setShowPassword(!showPassword)} />
+            <Label htmlFor="show-password">Show password</Label>
           </div>
         </CardContent>
         <CardFooter className="flex flex-col">
