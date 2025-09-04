@@ -12,7 +12,14 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
-import { Sparkles, Trash2 } from 'lucide-react';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { CircleUser, Sparkles, Trash2 } from 'lucide-react';
+import Link from 'next/link';
 
 export function ChatHeader({ onClear, onSummarize }) {
   return (
@@ -43,6 +50,22 @@ export function ChatHeader({ onClear, onSummarize }) {
             </AlertDialogFooter>
           </AlertDialogContent>
         </AlertDialog>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="ghost" size="icon">
+              <CircleUser className="w-5 h-5" />
+              <span className="sr-only">Account</span>
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            <DropdownMenuItem asChild>
+              <Link href="/login">Login</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link href="/signup">Sign Up</Link>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
     </header>
   );
