@@ -23,7 +23,7 @@ export function EmptyScreen({ onSuggestionClick }) {
     <div className="mx-auto max-w-2xl px-4 flex-1 flex items-center justify-center">
       <div className="rounded-lg border bg-background p-8 w-full text-center">
         <h1 className="mb-2 text-lg font-semibold font-headline">
-          Welcome to Gemini Chat Companion
+          Welcome to SmartChat
         </h1>
         <p className="mb-6 leading-normal text-muted-foreground">
           Start a conversation or try one of these examples.

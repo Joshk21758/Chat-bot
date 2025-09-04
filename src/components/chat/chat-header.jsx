@@ -17,7 +17,7 @@ import { Sparkles, Trash2 } from 'lucide-react';
 export function ChatHeader({ onClear, onSummarize }) {
   return (
     <header className="flex items-center justify-between p-4 border-b">
-      <h1 className="text-xl font-bold font-headline">Gemini Chat Companion</h1>
+      <h1 className="text-xl font-bold font-headline">SmartChat</h1>
       <div className="flex items-center gap-2">
         <Button variant="ghost" size="icon" onClick={onSummarize}>
           <Sparkles className="w-5 h-5 text-accent" />
