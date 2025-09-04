@@ -20,7 +20,7 @@ const initialMessages: Message[] = [
     id: '0',
     role: 'assistant',
     content:
-      "Hello! I'm your Gemini Chat Companion. I can help you refine your questions to get better answers. Type a query to get started.",
+      "Hello! I'm SmartChat. I can help you refine your questions to get better answers. Type a query to get started.",
   },
 ];
 
