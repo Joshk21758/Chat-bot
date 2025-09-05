@@ -22,7 +22,7 @@ export default function SignupPage() {
 
   return (
     <div className="flex items-center justify-center h-screen bg-background">
-      <form>
+      <form action={action}>
         <Card className="w-[450px]">
           <CardHeader>
             <CardTitle className="text-3xl">Sign Up</CardTitle>

@@ -17,7 +17,7 @@ export default function LoginPage() {
 
   return (
     <div className="flex items-center justify-center h-screen bg-background">
-      <form>
+      <form action={action}>
         <Card className="w-[450px]">
           <CardHeader>
             <CardTitle className="text-2xl">Login</CardTitle>
