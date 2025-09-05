@@ -1,4 +1,5 @@
-import { Button } from "@/components/ui/button";
+import { login } from "@/actions/auth";
+
 import {
   Card,
   CardContent,
@@ -12,6 +13,8 @@ import { Label } from "@/components/ui/label";
 import Link from "next/link";
 
 export default function LoginPage() {
+  const [state, action, isPending] = useActionState(login, undefined);
+
   return (
     <div className="flex items-center justify-center h-screen bg-background">
       <form>
@@ -24,21 +27,28 @@ export default function LoginPage() {
           </CardHeader>
           <CardContent className="grid gap-4">
             <div className="grid gap-2">
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="m@example.com"
-                required
-              />
+              <Label>Email</Label>
+              <Input name="email" type="email" placeholder="m@example.com" />
+              {state?.errors?.email && (
+                <p className="text-sm text-red-600">{state.errors.email}</p>
+              )}
             </div>
             <div className="grid gap-2">
-              <Label htmlFor="password">Password</Label>
-              <Input id="password" type="password" required />
+              <Label>Password</Label>
+              <Input
+                name="password"
+                type="password"
+                placeholder="Enter your password"
+              />
+              {state?.errors?.password && (
+                <p className="text-sm text-red-600">{state.errors.password}</p>
+              )}
             </div>
           </CardContent>
           <CardFooter className="flex flex-col">
-            <Button className="w-full">Sign in</Button>
+            <button className="login-btn" disabled={isPending}>
+              {isPending ? "Loading..." : "Sign In"}
+            </button>
             <p className="mt-2 text-xs text-center text-gray-700">
               {" "}
               Don't have an account?{" "}

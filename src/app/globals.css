@@ -57,3 +57,11 @@
     @apply bg-background text-foreground;
   }
 }
+
+.reg-btn {
+  @apply w-full bg-primary text-primary-foreground py-2 rounded-md hover:bg-primary/90 transition;
+}
+
+.login-btn {
+  @apply w-full bg-accent text-accent-foreground py-2 rounded-md hover:bg-accent/90 transition;
+}

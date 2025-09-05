@@ -13,5 +13,8 @@ export const RegisterFormSchema = z.object({
 //Login form schema
 export const LoginFormSchema = z.object({
   email: z.string().trim(),
-  password: z.string().trim(),
+  password: z
+    .string()
+    .trim()
+    .min(8, { error: "Password must be atleast 8 characters" }),
 });
