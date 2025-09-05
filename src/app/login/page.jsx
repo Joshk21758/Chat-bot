@@ -1,3 +1,5 @@
+"use client";
+
 import { login } from "@/actions/auth";
 
 import {
@@ -11,6 +13,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
+import { useActionState } from "react";
 
 export default function LoginPage() {
   const [state, action, isPending] = useActionState(login, undefined);
